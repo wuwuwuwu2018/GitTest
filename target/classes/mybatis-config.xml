@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+
+    <environments default="development1">
+
+        <!--  环境-->
+        <environment id="development1">
+
+            <!-- 事务管理器，使用JDBC默认的事务处理-->
+            <transactionManager type="JDBC"/>
+
+            <!--
+                数据源
+                type:数据库连接池
+                    a)c3p0
+                    POOLED:MyBatis自己提供的连接池
+             -->
+            <dataSource type="POOLED">
+
+                <!-- 连接数据库的四个属性-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/2001"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+
+        <environment id="development2">
+
+            <!-- 事务管理器，使用JDBC默认的事务处理-->
+            <transactionManager type="JDBC"/>
+
+            <!--
+                数据源
+                type:数据库连接池
+                    a)c3p0
+                    POOLED:MyBatis自己提供的连接池
+             -->
+            <dataSource type="POOLED">
+
+                <!-- 连接数据库的四个属性-->
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/2001"/>
+                <property name="username" value="root"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+
+    </environments>
+
+    <!-- Mapoer文件的配置(写sql) -->
+    <mappers>
+        <mapper resource="mapper/IUserDao.xml"/>
+    </mappers>
+</configuration>
